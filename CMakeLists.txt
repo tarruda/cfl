@@ -16,6 +16,10 @@ if(CTR_DEV)
   set(CMAKE_BUILD_TYPE Debug)
 endif()
 
+# Include headers and dependency headers
+include_directories(
+  include
+  )
 
 add_subdirectory(src)
 

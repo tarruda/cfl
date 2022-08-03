@@ -1,5 +1,6 @@
 set(src
   cfl.c
+  cfl_sds.c
   )
 
 # Static Library
