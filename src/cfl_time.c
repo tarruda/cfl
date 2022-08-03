@@ -32,10 +32,10 @@ uint64_t cfl_time_now()
 {
     struct timespec tm = {0};
 
-#if defined CMT_HAVE_TIMESPEC_GET
+#if defined CFL_HAVE_TIMESPEC_GET
     /* C11 supported */
     timespec_get(&tm, TIME_UTC);
-#elif defined CMT_HAVE_CLOCK_GET_TIME
+#elif defined CFL_HAVE_CLOCK_GET_TIME
     /* MacOS */
     clock_serv_t cclock;
     mach_timespec_t mts;
