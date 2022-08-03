@@ -15,3 +15,7 @@ option(CFL_DEV             "Enable development mode"                   No)
 if(CTR_DEV)
   set(CMAKE_BUILD_TYPE Debug)
 endif()
+
+
+add_subdirectory(src)
+
