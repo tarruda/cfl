@@ -1,3 +1,5 @@
 build/*
+include/cfl/cfl_info.h
+include/cfl/cfl_version.h
 cfl.sublime*
 
