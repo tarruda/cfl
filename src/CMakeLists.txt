@@ -1,6 +1,7 @@
 set(src
   cfl.c
   cfl_sds.c
+  cfl_time.c
   )
 
 # Static Library

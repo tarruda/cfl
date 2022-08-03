@@ -20,6 +20,11 @@
 #ifndef CFL_H
 #define CFL_H
 
+/* headers that are needed in general */
+#include <cfl/cfl_info.h>
+#include <cfl/cfl_version.h>
+#include <cfl/cfl_sds.h>
+
 int clf_init();
 
 #endif
