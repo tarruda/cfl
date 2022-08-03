@@ -11,9 +11,11 @@ set(CFL_VERSION_STR    "${CFL_VERSION_MAJOR}.${CFL_VERSION_MINOR}.${CFL_VERSION_
 
 # Configuration options
 option(CFL_DEV             "Enable development mode"                   No)
+option(CFL_TESTS           "Enable unit testing"                       No)
 
 if(CFL_DEV)
   set(CMAKE_BUILD_TYPE Debug)
+  set(CFL_TESTS        On)
 endif()
 
 # Include helpers
@@ -113,8 +115,11 @@ include_directories(
 
 add_subdirectory(src)
 
-
-
+# Tests
+if(CFL_TESTS)
+  enable_testing()
+  add_subdirectory(tests)
+endif()
 
 # Installer Generation (Cpack)
 # ============================
