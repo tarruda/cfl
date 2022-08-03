@@ -1,8 +1,8 @@
 /* -*- Mode: C; tab-width: 4; indent-tabs-mode: nil; c-basic-offset: 4 -*- */
 
-/*  CTraces
- *  =======
- *  Copyright 2022 Eduardo Silva <eduardo@calyptia.com>
+/*  CFL
+ *  ===
+ *  Copyright (C) 2022 The CFL Authors
  *
  *  Licensed under the Apache License, Version 2.0 (the "License");
  *  you may not use this file except in compliance with the License.
