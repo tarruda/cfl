@@ -8,6 +8,9 @@ note: The name doesn't mean anything specific, you can call it `c:\ floppy` if y
 
 - cfl_sds: string manipulation
 - cfl_list: linked list 
+- cfl_kv: key value pairs by using a linked list (cfl_list)
+- cfl_array: array of elements
+- cfl_variant: interface to manage contexts with vairant types
 - cfl_time: time utilities
 
 ## License
