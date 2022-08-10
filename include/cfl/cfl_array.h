@@ -23,6 +23,7 @@
 #include <cfl/cfl_variant.h>
 
 struct cfl_array {
+    int                  resizable;
     struct cfl_variant **entries;
     size_t               slot_count;
     size_t               entry_count;
@@ -41,6 +42,7 @@ static inline struct cfl_variant *cfl_array_fetch_by_index(struct cfl_array *arr
     return array->entries[position];
 }
 
+int cfl_array_resizable(struct cfl_array *array, int v);
 int cfl_array_remove_by_index(struct cfl_array *array, size_t position);
 int cfl_array_remove_by_reference(struct cfl_array *array, struct cfl_variant *value);
 int cfl_array_append(struct cfl_array *array, struct cfl_variant *value);

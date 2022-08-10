@@ -30,6 +30,10 @@ struct cfl_array *cfl_array_create(size_t slot_count)
         return NULL;
     }
 
+    /* by default arrays are not resizable */
+    array->resizable = CFL_FALSE;
+
+    /* allocate fixed number of entries */
     array->entries = calloc(slot_count, sizeof(void *));
     if (array->entries == NULL) {
         cfl_errno();
@@ -61,6 +65,16 @@ void cfl_array_destroy(struct cfl_array *array)
         free(array->entries);
     }
     free(array);
+}
+
+int cfl_array_resizable(struct cfl_array *array, int v)
+{
+    if (v != CFL_TRUE && v != CFL_FALSE) {
+        return -1;
+    }
+
+    array->resizable = v;
+    return 0;
 }
 
 int cfl_array_remove_by_index(struct cfl_array *array,
@@ -102,10 +116,33 @@ int cfl_array_remove_by_reference(struct cfl_array *array,
 int cfl_array_append(struct cfl_array *array,
                      struct cfl_variant *value)
 {
-    if (array->entry_count >= array->slot_count) {
-        return -1;
-    }
+    void *tmp;
+    size_t new_slot_count;
+    size_t new_size;
 
+    if (array->entry_count >= array->slot_count) {
+        /*
+         * if there is no more space but the caller allowed to resize
+         * the array, just double the size. Yeah, this is scary and should
+         * be used only when the caller 'knows this is safe to do' because
+         * it controls the input data.
+         */
+        if (array->resizable) {
+            /* set new number of slots and total size */
+            new_slot_count = (array->slot_count * 2);
+            new_size = (new_slot_count * sizeof(void *));
+
+            tmp = realloc(array->entries, new_size);
+            if (!tmp) {
+                cfl_report_runtime_error();
+                return -1;
+            }
+            array->slot_count = new_slot_count;
+        }
+        else {
+            return -1;
+        }
+    }
     array->entries[array->entry_count++] = value;
 
     return 0;
