@@ -20,6 +20,9 @@
 #ifndef CFL_H
 #define CFL_H
 
+#define CFL_FALSE   0
+#define CFL_TRUE    !CFL_FALSE
+
 /* headers that are needed in general */
 #include <cfl/cfl_info.h>
 #include <cfl/cfl_version.h>
