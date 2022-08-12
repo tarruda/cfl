@@ -94,7 +94,7 @@ struct cfl_variant *cfl_variant_create_from_double(double value)
 
     instance = cfl_variant_create();
     if (instance != NULL) {
-        instance->data.as_bool = value;
+        instance->data.as_double = value;
         instance->type = CFL_VARIANT_DOUBLE;
     }
 

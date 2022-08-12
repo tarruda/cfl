@@ -50,4 +50,3 @@ uint64_t cfl_time_now()
 
     return (((uint64_t) tm.tv_sec * 1000000000L) + tm.tv_nsec);
 }
-
