@@ -189,8 +189,8 @@ int cfl_kvlist_insert_bool(struct cfl_kvlist *list,
     return 0;
 }
 
-int cfl_kvlist_insert_int(struct cfl_kvlist *list,
-                          char *key, int64_t value)
+int cfl_kvlist_insert_int64(struct cfl_kvlist *list,
+                            char *key, int64_t value)
 {
     struct cfl_variant *value_instance;
     int                 result;
