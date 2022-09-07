@@ -3,6 +3,7 @@ include_directories(lib/acutest)
 set(UNIT_TESTS_FILES
   kv.c
   hash.c
+  list.c
   )
 
 configure_file(
