@@ -110,10 +110,10 @@ static inline void cfl_list_del(struct cfl_list *entry)
 static inline int cfl_list_is_empty(struct cfl_list *head)
 {
     if (head->next == head) {
-        return 0;
+        return CFL_TRUE;
     }
 
-    else return -1;
+    return CFL_FALSE;
 }
 
 static inline int cfl_list_size(struct cfl_list *head)
