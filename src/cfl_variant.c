@@ -120,7 +120,7 @@ struct cfl_variant *cfl_variant_create_from_kvlist(struct cfl_kvlist *value)
 
     instance = cfl_variant_create();
     if (instance != NULL) {
-        instance->data.as_kv = value;
+        instance->data.as_kvlist = value;
         instance->type = CFL_VARIANT_KVLIST;
     }
 
@@ -169,7 +169,7 @@ void cfl_variant_destroy(struct cfl_variant *instance)
         cfl_array_destroy(instance->data.as_array);
     }
     else if (instance->type == CFL_VARIANT_KVLIST) {
-        cfl_kvlist_destroy(instance->data.as_kv);
+        cfl_kvlist_destroy(instance->data.as_kvlist);
     }
 
     free(instance);

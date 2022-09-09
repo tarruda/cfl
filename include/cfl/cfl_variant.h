@@ -43,7 +43,7 @@ struct cfl_variant {
         double as_double;
         void *as_reference;
         struct cfl_array *as_array;
-        struct cfl_kvlist *as_kv;
+        struct cfl_kvlist *as_kvlist;
     } data;
 };
 
