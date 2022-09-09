@@ -30,6 +30,11 @@
 #include <cfl/cfl_sds.h>
 #include <cfl/cfl_list.h>
 #include <cfl/cfl_hash.h>
+#include <cfl/cfl_array.h>
+#include <cfl/cfl_kv.h>
+#include <cfl/cfl_kvlist.h>
+#include <cfl/cfl_time.h>
+#include <cfl/cfl_variant.h>
 
 int clf_init();
 

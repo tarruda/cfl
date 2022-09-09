@@ -17,7 +17,7 @@
  *  limitations under the License.
  */
 
-#include <cfl/cfl_kv.h>
+#include <cfl/cfl.h>
 
 #include "cfl_tests_internal.h"
 
