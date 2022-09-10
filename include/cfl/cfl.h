@@ -23,6 +23,10 @@
 #define CFL_FALSE   0
 #define CFL_TRUE    !CFL_FALSE
 
+#ifdef _WIN32
+#include <Windows.h>
+#endif
+
 /* headers that are needed in general */
 #include <cfl/cfl_info.h>
 #include <cfl/cfl_version.h>
